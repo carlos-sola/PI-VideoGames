@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Videogame } = require('../db');
+const { Videogame,Gender } = require('../db');
 const axios = require ('axios');
 const { v4: uuidv4 } = require("uuid");
 const e = require('express');
@@ -10,7 +10,7 @@ const {
   const videogameController = {
       getAll : async (req,res)=>{
         try{
-            const infoDataBase = await Videogame.findAll();
+            const infoDataBase = await Videogame.findAll({include:Gender});
             const info = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
             const infoApi = info.data.results.map(el=>{
                 return {
@@ -23,7 +23,7 @@ const {
                     platform: el.platforms.map(e=>{
                         return e.platform.name
                     }),
-                    gender: el.genres.map(e=>{
+                    genders: el.genres.map(e=>{
                         return e.name
                     }) ,
                     
@@ -41,7 +41,7 @@ const {
         } 
          },
       createVideogame : async(req,res)=>{
-          const{name,description,releasDate,rating,platform,image}=req.body;
+          const{name,description,releasDate,rating,platform,image,gender}=req.body;
           try{
             if(name&&description&&platform){
                 const id = uuidv4();
@@ -59,7 +59,7 @@ const {
                 res.status(404).send({msg:"Faltan campos obligatorios"});
             }
           }catch(err){
-              res.status(500).send({err:message})
+              res.status(500).send({err:err.message})
           }
           
       }   
