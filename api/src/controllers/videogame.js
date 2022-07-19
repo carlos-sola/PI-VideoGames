@@ -18,11 +18,15 @@ const {
                     name:el.name,
                     description:el.description,
                     releasDate: el.released,
+                    image:el.background_image,
                     rating: el.rating,
                     platform: el.platforms.map(e=>{
                         return e.platform.name
                     }),
-                    image: el.background_image
+                    gender: el.genres.map(e=>{
+                        return e.name
+                    }) ,
+                    
                 }
             })
             if(infoDataBase.length){
@@ -48,7 +52,7 @@ const {
                     releasDate:releasDate,
                     rating:rating,
                     platform:platform,
-                    image:image
+                    
                 })
                 res.status(200).send(newVideogame);
             }else{

@@ -25,9 +25,6 @@ module.exports = (sequelize) => {
     platform:{
       type: DataTypes.ARRAY(DataTypes.STRING)
     },
-    image:{
-      type: DataTypes.STRING
-    }
   },{
     timesTamps:false
   });
