@@ -11,21 +11,25 @@ const {
       getAll : async (req,res)=>{
         try{
             const infoDataBase = await Videogame.findAll();
-            const info = await axios.get(`https://api.rawg.io/api/games?key=b58db537ed804e0fa0777e9a29ca101c`);
+            const info = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
             const infoApi = info.data.results.map(el=>{
                 return {
+                    id:el.id,
                     name:el.name,
                     description:el.description,
                     releasDate: el.released,
                     rating: el.rating,
-                    platform: el.platform
+                    platform: el.platforms.map(e=>{
+                        return e.platform.name
+                    }),
+                    image: el.background_image
                 }
             })
-            const totalInfo= {results:infoDataBase.concat(infoApi)};
             if(infoDataBase.length){
-                res.status(200).send(totalInfo)
+                const totalInfo= {results:infoDataBase.concat(infoApi)};
+               return res.status(200).send(totalInfo);
             }else{
-                res.status(200).send(infoApi)
+               return res.status(200).send({results:infoApi});
             }
             
         }catch(error){
@@ -33,7 +37,7 @@ const {
         } 
          },
       createVideogame : async(req,res)=>{
-          const{name,description,releasDate,rating,platform}=req.body;
+          const{name,description,releasDate,rating,platform,image}=req.body;
           try{
             if(name&&description&&platform){
                 const id = uuidv4();
@@ -43,7 +47,8 @@ const {
                     description:description,
                     releasDate:releasDate,
                     rating:rating,
-                    platform:platform
+                    platform:platform,
+                    image:image
                 })
                 res.status(200).send(newVideogame);
             }else{

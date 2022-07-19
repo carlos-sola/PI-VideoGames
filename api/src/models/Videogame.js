@@ -23,7 +23,10 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER
     },
     platform:{
-      type: DataTypes.ENUM('playStation 3','playStation 4','playStation 5','xbox one','xbox series','xbox 360','pc','nintendo')
+      type: DataTypes.ARRAY(DataTypes.STRING)
+    },
+    image:{
+      type: DataTypes.STRING
     }
   },{
     timesTamps:false
