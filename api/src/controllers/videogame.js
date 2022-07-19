@@ -24,7 +24,7 @@ const {
                         return e.platform.name
                     }),
                     genders: el.genres.map(e=>{
-                        return e.name
+                        return {name:e.name}
                     }) ,
                     
                 }
@@ -43,21 +43,29 @@ const {
       createVideogame : async(req,res)=>{
           const{name,description,releasDate,rating,platform,image,gender}=req.body;
           try{
-            if(name&&description&&platform){
-                const id = uuidv4();
-                const newVideogame= await Videogame.create({
-                    id:id,
-                    name:name,
-                    description:description,
-                    releasDate:releasDate,
-                    rating:rating,
-                    platform:platform,
-                    
-                })
-                res.status(200).send(newVideogame);
-            }else{
+            if(!name||!description||!platform){
                 res.status(404).send({msg:"Faltan campos obligatorios"});
             }
+            const id = uuidv4();
+            const newVideogame= await Videogame.create({
+                id:id,
+                name:name,
+                description:description,
+                releasDate:releasDate,
+                rating:rating,
+                platform:platform,     
+                });
+             if (gender&&gender.length) {
+                let genderDb =[]
+                for(let i=0;i<gender.length;i++){
+                    let foundGenders = await Gender.findOne({where:{
+                        name:gender[i]
+                        }});
+                    genderDb.push(foundGenders)
+                } 
+                await newVideogame.addGenders(genderDb)    
+            }
+             return res.status(200).send(newVideogame);
           }catch(err){
               res.status(500).send({err:err.message})
           }
