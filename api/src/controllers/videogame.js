@@ -2,12 +2,34 @@ require('dotenv').config();
 const { Videogame,Gender } = require('../db');
 const axios = require ('axios');
 const { v4: uuidv4 } = require("uuid");
-const e = require('express');
+const validator = require('validator');
 const {
     API_KEY
   } = process.env;
 
   const videogameController = {
+      getById: async(req,res)=>{
+        const {idVideogame}=req.params;
+        
+        try{
+            if(validator.isUUID(idVideogame)){
+            const foundById = await Videogame.findByPk(idVideogame);
+                if(foundById){
+                    return res.status(200).send({res: foundById})  
+                }else{
+                    return res.status(502).send('No se encontró el videogame ')}
+            }else{
+                const foundIdApi = await axios.get(`https://api.rawg.io/api/games/${idVideogame}?key=${API_KEY}`);
+                if(foundIdApi){
+                    return res.status(200).send({res: foundIdApi.data}) 
+                }else{
+                    return res.status(500).send('No encontrado') 
+                }
+            }
+        }catch(err){
+            return res.status(501).send({err:err.message})
+        }
+      },
       getAll : async (req,res)=>{
           const {name}=req.query;
           let infoDataBase;
