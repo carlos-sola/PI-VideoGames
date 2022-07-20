@@ -9,10 +9,22 @@ const {
 
   const videogameController = {
       getAll : async (req,res)=>{
+          const {name}=req.query;
+          let infoDataBase;
+          let info;
+          let infoApi;
         try{
-            const infoDataBase = await Videogame.findAll({include:Gender});
-            const info = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
-            const infoApi = info.data.results.map(el=>{
+            if(name){
+                info = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${API_KEY}`);
+                infoDataBase= await Videogame.findAll({include:Gender});
+                infoDataBase=infoDataBase.filter(p=>{
+                    return p.name.toLowerCase().includes(name.toLowerCase())})
+            }else{
+                infoDataBase = await Videogame.findAll({include:Gender});
+            info = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
+            }
+            
+            infoApi = info.data.results.map(el=>{
                 return {
                     id:el.id,
                     name:el.name,
@@ -28,18 +40,19 @@ const {
                     }) ,
                     
                 }
-            })
+            });
             if(infoDataBase.length){
                 const totalInfo= {results:infoDataBase.concat(infoApi)};
-               return res.status(200).send(totalInfo);
+               return res.status(200).send({totalInfo});
             }else{
-               return res.status(200).send({results:infoApi});
-            }
-            
+               return res.status(200).send({results:infoDataBase});
+            }    
         }catch(error){
             res.status(500).send({error: error.message})
         } 
-         },
+     },
+
+
       createVideogame : async(req,res)=>{
           const{name,description,releasDate,rating,platform,image,gender}=req.body;
           try{
