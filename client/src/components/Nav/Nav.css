@@ -1,0 +1,21 @@
+.logo{
+    width: 36px;
+    height: 36px;
+    padding: 16px;
+    margin-left: 40px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    height: 88px;
+    background-color: rgb(226, 221, 221);
+
+}
+.menu{
+    padding: 16px;
+    margin-right: 40px;
+}
+.search{
+    padding: 16px;
+}
