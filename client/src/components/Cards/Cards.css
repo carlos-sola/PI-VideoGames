@@ -1,0 +1,14 @@
+.cards-wrapper {
+    max-height: calc(100vh - 80px);
+    overflow-y: scroll;
+
+}
+
+.cards-container{
+    display: flex;
+    background-color: rgba(3, 45, 122, 0.774);
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 48px;
+}

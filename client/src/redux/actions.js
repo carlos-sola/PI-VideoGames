@@ -9,7 +9,7 @@ export function getAllVideogames(){
         const json = await axios.get("http://localhost:3001/videogame");
         return dispatch({
             type: GET_ALL_VIDEOGAMES,
-            payload: json.data
+            payload: json.data.totalInfo.results
         })
     }
 };

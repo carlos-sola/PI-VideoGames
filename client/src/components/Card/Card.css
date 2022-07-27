@@ -1,0 +1,17 @@
+.container{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(2, 145, 211, 0.705);
+    padding: 28px;
+    border-radius: 12px;
+    margin: 16px;
+    height: 375px;
+}
+.imagen{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}

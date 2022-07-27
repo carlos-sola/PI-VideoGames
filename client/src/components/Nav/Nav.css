@@ -1,6 +1,6 @@
 .logo{
-    width: 36px;
-    height: 36px;
+    width: 70px;
+    height: 70px;
     padding: 16px;
     margin-left: 40px;
 }
@@ -8,8 +8,8 @@
 .navbar{
     display: flex;
     justify-content: space-between;
-    height: 88px;
-    background-color: rgb(226, 221, 221);
+    height: 80px;
+    background-color: rgb(238, 232, 232);
 
 }
 .menu{
@@ -17,5 +17,14 @@
     margin-right: 40px;
 }
 .search{
-    padding: 16px;
+    padding: 20px;
+}
+.boton{
+    margin-left: 8px;
+    background-color: rgb(2, 145, 211);
+    border-color:rgb(2, 145, 211) ;
+    color:whitesmoke;
+    border-radius: 8px;
+    height: 36px;
+    width: 52px;
 }
