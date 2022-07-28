@@ -13,7 +13,7 @@ export default function Cards () {
     return <div className='cards-wrapper'>
             <div className='cards-container'>
             {showVideogames?.map(p=>{
-                    return <Card id={p.id} name={p.name} gender={p.gender} image={p.image} rating={p.rating} />
+                    return <Card key={p.id} name={p.name} gender={p.genders} image={p.image} rating={p.rating} />
             })}
             </div>
     </div> 

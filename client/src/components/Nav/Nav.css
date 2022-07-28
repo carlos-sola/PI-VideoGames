@@ -9,22 +9,42 @@
     display: flex;
     justify-content: space-between;
     height: 80px;
-    background-color: rgb(238, 232, 232);
+    background-color: #082544;
 
 }
 .menu{
-    padding: 16px;
+    padding: 24px;
     margin-right: 40px;
+    color:rgb(245, 245, 245);
+    cursor: pointer;
+    font:bold;
+    font-size: 18px;
 }
 .search{
-    padding: 20px;
+    padding-top: 20px;
+}
+.input{
+    height: 34px;
+    color: rgb(245, 245, 245);
+    background-color:#030e1a ;
+    border-radius: 8px;
+    border-color: rgb(3, 122, 177);
 }
 .boton{
     margin-left: 8px;
     background-color: rgb(2, 145, 211);
     border-color:rgb(2, 145, 211) ;
-    color:whitesmoke;
+    color:rgb(236, 233, 233);
     border-radius: 8px;
     height: 36px;
-    width: 52px;
+    width: 66px;
+    cursor: pointer;
+}
+button.boton:hover{
+    background-color:#030e1a;
+    color:rgb(2, 145, 211);
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    border-color: rgb(2, 145, 211);
 }

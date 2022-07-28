@@ -4,14 +4,37 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(2, 145, 211, 0.705);
-    padding: 28px;
+    background-color: rgba(3, 130, 189, 0.74);
+    padding: 18px;
+    padding-top: 30px;
     border-radius: 12px;
     margin: 16px;
     height: 375px;
+    color: rgb(245, 245, 245);
+    cursor: pointer;
 }
 .imagen{
     display: flex;
     justify-content: center;
     width: 90%;
+}
+.generos{
+    display: flex;
+    padding: 4px 8px;
+    background-color: rgba(255, 255, 255, 0.397) ;
+    border-color: rgb(20, 20, 20);
+    color:black;
+    margin: 2px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+}
+.name-videogame{
+    font-weight: bolder;
+    font-size: 22px;
+    font-style:inherit;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    color: rgb(235, 229, 229);
+    text-align: center;
 }

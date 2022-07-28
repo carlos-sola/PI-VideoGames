@@ -11,8 +11,8 @@ export default function NavBar() {
     return <nav className='navbar'>
              <img className='logo' src={Logo} alt=''/>
              <div className='search'>
-                 <input type="text" placeholder='buscar juego por nombre...' />
-                 <button className='boton'>buscar</button>
+                 <input className='input' type="text" placeholder='buscar juego por nombre...' />
+                 <button className='boton'>BUSCAR</button>
              </div>
              
              <div className='menu'>Menú</div>

@@ -1,12 +1,16 @@
 .cards-wrapper {
     max-height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px) ;
     overflow-y: scroll;
+    background-image: url("https://miro.medium.com/max/1050/1*VVdvi5v250Q8LfN-tmE_uw.jpeg");
+    background-size: 100%;
+
 
 }
 
 .cards-container{
     display: flex;
-    background-color: rgba(3, 45, 122, 0.774);
+    background-color: rgba(19, 38, 75, 0.363);
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
