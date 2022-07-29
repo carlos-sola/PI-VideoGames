@@ -8,7 +8,7 @@ export default function Card ({id,name,rating,gender,image}) {
             <img className='imagen' src={image ? image:Logo}/>
             <p className='name-videogame'>{name}</p>
             <p>{gender?.map(g=>{
-                return <span className='generos'>{g.name}</span>
+                return <span key={g.name} className='generos'>{g.name}</span>
             })}</p>
             <p>Rating:{rating}</p>
             <p>{id}</p>

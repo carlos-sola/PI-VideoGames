@@ -9,7 +9,6 @@ import NavBar from './Nav/Nav'
 export default function Home() {
 
     let dispatch = useDispatch();
-    const videoGames = useSelector(state=>state.allvideogames)
     
 
     useEffect(() => {

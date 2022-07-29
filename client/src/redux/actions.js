@@ -15,7 +15,7 @@ export function getAllVideogames(){
 };
 export const getVideogameDetail =(id) => {
     return async (dispatch) => { 
-          const json = await axios.get (`http://localhost:3001/videogame/:${id}`)
+          const json = await axios.get (`http://localhost:3001/videogame/${id}`)
           return  dispatch({ 
             type: GET_VIDEOGAME_DETAIL, 
             payload: json.data });

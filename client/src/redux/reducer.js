@@ -3,6 +3,7 @@ import {CREATE_VIDEOGAME,GET_VIDEOGAME_DETAIL,GET_ALL_VIDEOGAMES} from './action
 const initialState = {
     allvideogames:[],
     showVideogames:[],
+    videoGameDetail:{},
 
 };
 const rootReducer=(state=initialState,action)=>{
@@ -16,7 +17,7 @@ const rootReducer=(state=initialState,action)=>{
         case GET_VIDEOGAME_DETAIL:
             return {
                 ...state,
-                showVideogames: action.payload,
+                videoGameDetail: action.payload,
             }
         case CREATE_VIDEOGAME:
             return {

@@ -7,13 +7,18 @@ import './Cards.css'
 
 export default function Cards () {
    const showVideogames = useSelector(state => state.showVideogames);
-        console.log(showVideogames);
-
    
     return <div className='cards-wrapper'>
             <div className='cards-container'>
             {showVideogames?.map(p=>{
-                    return <Card key={p.id} name={p.name} gender={p.genders} image={p.image} rating={p.rating} />
+                    return  <Link key={p.id} to={`/detail/${p.id}`}>
+                        <Card  
+                        name={p.name}
+                        gender={p.genders} 
+                        image={p.image} 
+                        rating={p.rating} />
+                    </Link>
+                    
             })}
             </div>
     </div> 
