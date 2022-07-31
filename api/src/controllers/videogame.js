@@ -84,7 +84,8 @@ const {
                 description:description,
                 releasDate:releasDate,
                 rating:rating,
-                platform:platform,     
+                platform:platform,
+                image:image     
                 });
              if (gender&&gender.length) {
                 let genderDb =[]
