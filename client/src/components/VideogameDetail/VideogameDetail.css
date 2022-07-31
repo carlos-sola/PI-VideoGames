@@ -1,0 +1,75 @@
+.detail{
+    max-height: 100vh;
+    min-height: 100vh ;
+    overflow-y: scroll;
+    background: no-repeat url("https://miro.medium.com/max/1050/1*VVdvi5v250Q8LfN-tmE_uw.jpeg");
+    background-position: center;
+    background-size: 100%;
+}
+
+.imagen-detail{
+    width: 500px;
+    height: auto;
+    display: flex;
+    justify-content:center;
+    padding-bottom: 20px;
+}
+.nombre-detail{
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 24px;
+    margin: 2px;
+}
+.carddetail{
+    background-color: rgba(0, 0, 0, 0.733);
+    color: gainsboro;
+}
+.detalle-container{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-atras{
+    justify-content: left;
+    background-color:#030e1a;
+    color:rgb(2, 145, 211);
+    border-color: rgb(2, 145, 211);
+    margin-left: 8px;
+    border-radius: 8px;
+    height: 28px;
+    width: 44px;
+    cursor: pointer;
+    font-size: 12px;
+}
+button.boton-atras:hover{
+    background-color: rgb(2, 117, 170);
+    border-color:rgb(2, 117, 170) ;
+    color:rgb(223, 217, 217);
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+   
+}
+.description{
+    padding-bottom: 8px;
+}
+.link{
+    color: rgb(33, 190, 33);
+}
+.generos-detail{
+    padding-left: 2px;
+    padding-right: 2px;
+    background-color: rgba(9, 170, 245, 0.479) ;
+    border-color: rgb(20, 20, 20);
+    color:rgb(182, 179, 179);
+    margin: 4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+}

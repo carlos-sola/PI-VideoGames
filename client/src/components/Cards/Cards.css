@@ -10,7 +10,7 @@
 
 .cards-container{
     display: flex;
-    background-color: rgba(19, 38, 75, 0.363);
+    background-color: rgba(0, 0, 0, 0.568);
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;

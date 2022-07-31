@@ -1,0 +1,21 @@
+.paginado{
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    padding-top: 20px;
+    padding-bottom: 2px;
+}
+.number{
+    text-decoration: none;
+    background-color: rgba(2, 145, 211, 0.61);
+    color: #05182c;
+    max-width: 40px;
+    margin: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-weight: 500;
+    cursor: pointer;
+
+}

@@ -1,4 +1,4 @@
-import {CREATE_VIDEOGAME,GET_VIDEOGAME_DETAIL,GET_ALL_VIDEOGAMES} from './actions'
+import {CREATE_VIDEOGAME,GET_VIDEOGAME_DETAIL,GET_ALL_VIDEOGAMES,GET_VIDEOGAME_BY_NAME} from './actions'
 
 const initialState = {
     allvideogames:[],
@@ -24,6 +24,11 @@ const rootReducer=(state=initialState,action)=>{
             ...state,
             products: state.allvideogames.concat(action.payload),
       }
+      case GET_VIDEOGAME_BY_NAME :
+          return{
+              ...state,
+              showVideogames: action.payload
+          }
 
     }
     return state
