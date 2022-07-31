@@ -21,8 +21,8 @@ export const getVideogameDetail =(id) => {
             payload: json.data.res });
     };
   };
-  export const createVideogame = function (values) {
-    return { type: CREATE_VIDEOGAME, payload: values }
+  export const createVideogame = function (name,description,image,releaseDate,rating,platform) {
+    return { type: CREATE_VIDEOGAME, payload: name,description,image }
   };
   
 export const getVideogameByName =(name) => {
@@ -33,4 +33,10 @@ export const getVideogameByName =(name) => {
           payload: json.data.totalInfo.results });
   };
 };
+export const getGenders = () =>{
+  return axios.get ("http://localhost:3001/gender/")
+};
+ export const getPlatforms = () =>{
+   return axios.get ("http://localhost:3001/platform/")
+ }
   

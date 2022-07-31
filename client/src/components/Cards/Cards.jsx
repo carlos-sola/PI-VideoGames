@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import Card from '../Card/Card'
 import './Cards.css'
-import Paginado from '../Paginado'
+import Paginado from '../Paginado/Paginado'
 
 
 export default function Cards () {

@@ -8,8 +8,8 @@
 }
 
 .imagen-detail{
-    width: 500px;
-    height: auto;
+    max-height: 350px;
+    width: auto;
     display: flex;
     justify-content:center;
     padding-bottom: 20px;
@@ -22,6 +22,7 @@
     margin: 2px;
 }
 .carddetail{
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.733);
     color: gainsboro;
 }
