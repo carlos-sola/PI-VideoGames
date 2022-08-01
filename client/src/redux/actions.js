@@ -2,7 +2,8 @@ import axios from 'axios';
 export const GET_ALL_VIDEOGAMES = "GET_ALL_VIDEOGAMES"
 export const GET_VIDEOGAME_DETAIL ="GET_VIDEOGAME_DETAIL";
 export const CREATE_VIDEOGAME = "CREATE_VIDEOGAME";
-export const GET_VIDEOGAME_BY_NAME = "GET_VIDEOGAME_BY_NAME"
+export const GET_VIDEOGAME_BY_NAME = "GET_VIDEOGAME_BY_NAME";
+export const SET_MENU = "SET_MENU"
 
 export function getAllVideogames(){
     return async function (dispatch) {
@@ -38,5 +39,13 @@ export const getGenders = () =>{
 };
  export const getPlatforms = () =>{
    return axios.get ("http://localhost:3001/platform/")
- }
+ };
+  export const setMenu = (value)=>{
+    return (dispatch) =>{
+      return dispatch ({
+        type: SET_MENU,
+      payload: value
+      }) 
+    }
+  }
   

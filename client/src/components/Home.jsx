@@ -5,6 +5,7 @@ import { getAllVideogames } from '../redux/actions';
 import Cards from './Cards/Cards'
 import NavBar from './Nav/Nav'
 import './Home.css'
+import Menu from './Menu/Menu';
 
 
 export default function Home() {
@@ -21,5 +22,6 @@ export default function Home() {
         <>
             <NavBar/>
             <Cards/>
+            <Menu/>
         </>)
 }

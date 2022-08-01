@@ -1,9 +1,10 @@
-import {CREATE_VIDEOGAME,GET_VIDEOGAME_DETAIL,GET_ALL_VIDEOGAMES,GET_VIDEOGAME_BY_NAME} from './actions'
+import {CREATE_VIDEOGAME,GET_VIDEOGAME_DETAIL,GET_ALL_VIDEOGAMES,GET_VIDEOGAME_BY_NAME,SET_MENU} from './actions'
 
 const initialState = {
     allvideogames:[],
     showVideogames:[],
     videoGameDetail:{},
+    menu:false,
 
 };
 const rootReducer=(state=initialState,action)=>{
@@ -29,8 +30,13 @@ const rootReducer=(state=initialState,action)=>{
               ...state,
               showVideogames: action.payload
           }
-
+        case SET_MENU:
+            return{
+            ...state,
+            menu: action.payload
+            }
     }
+  
     return state
 } 
 

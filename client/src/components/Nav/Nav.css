@@ -19,6 +19,16 @@
     cursor: pointer;
     font:bold;
     font-size: 18px;
+    background-color:#030e1a ;
+}
+.menu:hover{
+    padding: 24px;
+    margin-right: 40px;
+    color:rgb(245, 245, 245);
+    cursor: pointer;
+    font:bold;
+    font-size: 18px;
+    background-color:#0a3058 ;
 }
 .search{
     padding-top: 20px;

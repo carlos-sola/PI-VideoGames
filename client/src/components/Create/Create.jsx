@@ -4,6 +4,15 @@ import { getGenders, getPlatforms } from '../../redux/actions';
 import { Link } from 'react-router-dom'
 
 export default function CreateNewVideogame () {
+    const [newGame,setNewGame] = useState({
+        name:"",
+        description:"",
+        releaseDate:"",
+        platform:[],
+        image:"",
+        gender:[],
+        rating:"",
+    })
     const [genders,setGenders] = useState([])  
     const [platforms,setPlatforms] = useState([])
     const getGendersAndPlatforms = async()=>{
@@ -19,7 +28,7 @@ export default function CreateNewVideogame () {
     return <div className='create-videogame'>Crear nuevo Videogame
                 <form className='formulario'>
                     <label> Nombre: </label>
-                    <input type="text" name="name"/>
+                    <input type="text" name="name" value={newGame.name}/>
                     <br/>
                     <label> Descripción: </label>
                     <textarea name="description"/>
@@ -48,6 +57,9 @@ export default function CreateNewVideogame () {
                 
                     })}
                     </datalist>
+                    <br/>
+                    <label> Rating: </label>
+                    <input type="number" name='rating'/>
                 </form>
                 <Link to="/home"><button className='boton-atras'><h4>atrás</h4></button></Link>
              <div className='detalle-container'></div>

@@ -23,7 +23,7 @@ export default function Cards () {
     return <div className='cards-wrapper'>
             <div className='cards-container'>
             {currentVideogame?.map(p=>{
-                    return  <Link key={p.id} to={`/detail/${p.id}`}>
+                    return  <Link key={p.id} to={`/detail/${p.id}`} className="to-detail">
                         <Card  
                         name={p.name}
                         gender={p.genders} 
