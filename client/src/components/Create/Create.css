@@ -3,23 +3,26 @@
     background-position: center;
     background-size: 100%;
     min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     font-style:inherit;
 
 }
 .formulario{
     margin-top: 12px;
     padding: 32px;
-    min-height: 75vh;
     width: 500px;
     background-color: rgba(0, 0, 0, 0.699);
     border-radius: 10px;
     color: white;
+    max-height: 100vh;
+    min-height: 75vh ;
+    overflow-y: scroll;
 }
 .titulo-create{
     background-color: rgba(0, 0, 0, 0.699);
@@ -60,4 +63,32 @@
     background-color: rgb(151, 17, 17) ;
     color: whitesmoke;
     transition: 0.5s;
+}
+.platform-Label{
+    display: flex;
+    margin: 10px;
+    background-color:rgba(2, 145, 211, 0.795) ;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+
+    
+}
+.container-platform-label{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+
+    
+
+}
+.delete-buton-label{
+    background-color:rgb(151, 17, 17) ;
+    border-color: rgb(151, 17, 17);
+    padding: 2px;
+    margin: 5px;
+    color: whitesmoke;
+    font-size: x-small;
+    border-radius: 5px;
 }

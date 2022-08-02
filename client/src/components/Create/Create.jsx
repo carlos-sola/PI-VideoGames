@@ -90,13 +90,14 @@ export default function CreateNewVideogame() {
 
                 })}
             </select>
-            <ul><li>{newGame.platform.map(el => {
-                return <div>
+            <div className="container-platform-label">
+            {newGame.platform.map(el => {
+                return <div className="platform-Label">
                     <p>{el}</p>
-                    <button name="platform" onClick={(e) => handleDelete(e,el)}>x</button>
+                    <button className="delete-buton-label" name="platform" onClick={(e) => handleDelete(e,el)}>X</button>
                 </div>
-            })}</li></ul>
-
+            })}
+            </div>
             <br />
             <label>Géneros: </label>
             <select id="gender" name="gender" onChange={(e) => handleSelect(e)}>
@@ -105,13 +106,14 @@ export default function CreateNewVideogame() {
 
                 })}
             </select>
-            <ul><li>{newGame.gender.map(el => {
-                return <div>
+            <div className="container-platform-label">
+            {newGame.gender.map(el => {
+                return <div className="platform-Label">
                     <p>{el}</p>
-                    <button name="gender" onClick={(e) => handleDelete(e,el)}>x</button>
+                    <button className="delete-buton-label" name="gender" onClick={(e) => handleDelete(e,el)}>x</button>
                 </div>
-            })}</li></ul>
-
+            })}
+            </div>
 
             <br />
             <label> Rating: </label>

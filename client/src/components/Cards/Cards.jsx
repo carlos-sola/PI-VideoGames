@@ -32,6 +32,8 @@ export default function Cards () {
                     </Link>
                     
             })}
+            </div>
+            <div className='paginado-container'>
                 <Paginado 
             videogamePerPage={videogamePerPage}
             showVideogames={showVideogames.length}

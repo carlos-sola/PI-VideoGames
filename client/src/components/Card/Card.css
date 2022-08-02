@@ -4,9 +4,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(3, 130, 189, 0.74);
-    padding: 18px;
-    padding-top: 30px;
+    background-color: rgba(3, 130, 189, 0.83);
+    padding: 12px;
+    padding-top: 16px;
     border-radius: 12px;
     margin: 16px;
     height: 375px;
@@ -25,6 +25,9 @@
     display: flex;
     justify-content: center;
     width: 90%;
+    max-height: 140px;
+    border-radius: 8px;
+    
 }
 .generos{
     display: flex;

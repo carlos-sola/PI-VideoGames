@@ -5,7 +5,7 @@ import './Paginado.css'
 export default function Paginado ({videogamePerPage, showVideogames,paginado}){
     const pageNumber=[]
 
-    for(let i=0;i<=Math.ceil(showVideogames/videogamePerPage);i++){
+    for(let i=1;i<=Math.ceil(showVideogames/videogamePerPage);i++){
         pageNumber.push(i)
     }
     return(
@@ -13,9 +13,9 @@ export default function Paginado ({videogamePerPage, showVideogames,paginado}){
             <ul className='paginado'>
                 {pageNumber &&
                 pageNumber.map(number=>(
-                    <li key={number} className='number'>
-                        <a onClick={()=>paginado(number)}>{number}</a>
-                    </li>
+                    <div key={number} >
+                        <button className='number' onClick={()=>paginado(number)}>{number}</button>
+                    </div>
                 ))}
             </ul>
         </nav>
