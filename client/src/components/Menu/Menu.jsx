@@ -1,7 +1,7 @@
 import './Menu.css';
 import { useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import { filterByGender,filterByOrigin,getGenders} from '../../redux/actions';
+import { filterByGender,filterByOrigin,getGenders, sortAtoZ,resetFilter} from '../../redux/actions';
 import { Link} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
@@ -17,23 +17,31 @@ export default function Menu () {
     }
     function handleSelect(e){
         dispatch(filterByGender(e.target.value))
-        console.log('hola')
+
     }
-    function handleSelect1(e){
+    function handleFilter(e){
         dispatch(filterByOrigin(e.target.value))
-        console.log('hola')
     }
+    function handleSort(e){
+        dispatch(sortAtoZ(e.target.value))    
+    }
+    function resteFilters(e){
+        dispatch(resetFilter(e.target.value))    
+    }
+    
     
     useEffect(() => {
         fetchGender();
     }, [])
     return <div className={`menu-container ${menu ? "open" : ""}`}>
         <label>Ordenamiento</label>
-        <select>
-            <option value="value1">A-Z</option>
-            <option value="value2">Z-A</option>
-            <option value="value3">Rating</option>
+        <select onChange={handleSort}>
+            <option value="Z-A">Z-A</option>
+            <option value="A-Z">A-Z</option>
+            <option value="AscRating">Rating Asc</option>
+            <option value="DescRating">Rating Desc</option>
         </select>
+        <br/>
         <label>filtrar por Géneros</label>
         <select onChange={handleSelect}>
         <option key="All" value="All">All</option>
@@ -44,11 +52,14 @@ export default function Menu () {
         </select>
         <br/>
         <label>Filtrar por Origen</label>
-        <select onChange={handleSelect1}>
+        <select onChange={handleFilter}>
+            <option value="All">All</option>
             <option value="Created">Creados</option>
             <option value="Existentes">Existentes</option>
         </select>
-        <button className="limpiar-filtros">LIMPIAR FILTROS</button>
+        <br/>
+        <button className="limpiar-filtros" onClick={resteFilters}>LIMPIAR FILTROS</button>
+        <br/>
         <Link to="/home/create" className="to-create"><button className="btn-create">CREAR VIDEOGAME</button></Link>
 
     </div>

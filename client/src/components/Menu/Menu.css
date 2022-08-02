@@ -35,15 +35,16 @@
 .btn-create{
     border-radius: 8px;
     padding: 8px;
-    border-color: #05182c;
-    background-color:#05182c;
+    border-color: rgb(2, 145, 211);
+    background-color:rgb(2, 145, 211);
     color:whitesmoke;
     font: bolder;
+    cursor: pointer;
 }
 .btn-create:hover{
     border-color: rgb(2, 145, 211);
-    background-color:#030e1a;
-    color:rgb(2, 145, 211);
+    background-color:#05182c;
+    color: rgb(2, 145, 211);
     font: bolder;
 }
 .limpiar-filtros{
@@ -54,6 +55,7 @@
     color:whitesmoke;
     font: bolder;
     width: 120px;
+    cursor: pointer;
 }
 .limpiar-filtros:hover{
     border-color:rgb(151, 17, 17) ;

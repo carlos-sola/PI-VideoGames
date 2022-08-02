@@ -5,7 +5,9 @@ export const CREATE_VIDEOGAME = "CREATE_VIDEOGAME";
 export const GET_VIDEOGAME_BY_NAME = "GET_VIDEOGAME_BY_NAME";
 export const SET_MENU = "SET_MENU";
 export const FILTER_BY_GENDER = "FILTER_BY_GENDER";
-export const FILTER_BY_ORIGIN = "FILTER_BY_ORIGIN"
+export const FILTER_BY_ORIGIN = "FILTER_BY_ORIGIN";
+export const SORT_A_Z = "SORT_A_Z";
+export const RESET_FILTER = "RESET_FILTER"
 
 export function getAllVideogames(){
     return async function (dispatch) {
@@ -64,6 +66,18 @@ export const getGenders = () =>{
   export function filterByOrigin(payload){
     return{
       type:FILTER_BY_ORIGIN,
+      payload
+    }
+  }
+  export function sortAtoZ(payload){
+    return{
+      type:SORT_A_Z,
+      payload
+    }
+  }
+  export function resetFilter(payload){
+    return{
+      type:RESET_FILTER,
       payload
     }
   }

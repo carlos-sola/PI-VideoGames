@@ -13,7 +13,7 @@ export default function Paginado ({videogamePerPage, showVideogames,paginado}){
             <ul className='paginado'>
                 {pageNumber &&
                 pageNumber.map(number=>(
-                    <li className='number'>
+                    <li key={number} className='number'>
                         <a onClick={()=>paginado(number)}>{number}</a>
                     </li>
                 ))}
