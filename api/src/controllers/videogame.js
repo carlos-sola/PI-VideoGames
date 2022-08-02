@@ -13,7 +13,7 @@ const {
         
         try{
             if(validator.isUUID(idVideogame)){
-            const foundById = await Videogame.findByPk(idVideogame);
+            const foundById = await Videogame.findByPk(idVideogame,{include:Gender});
                 if(foundById){
                     return res.status(200).send({res: foundById})  
                 }else{

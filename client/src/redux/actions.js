@@ -3,7 +3,9 @@ export const GET_ALL_VIDEOGAMES = "GET_ALL_VIDEOGAMES"
 export const GET_VIDEOGAME_DETAIL ="GET_VIDEOGAME_DETAIL";
 export const CREATE_VIDEOGAME = "CREATE_VIDEOGAME";
 export const GET_VIDEOGAME_BY_NAME = "GET_VIDEOGAME_BY_NAME";
-export const SET_MENU = "SET_MENU"
+export const SET_MENU = "SET_MENU";
+export const FILTER_BY_GENDER = "FILTER_BY_GENDER";
+export const FILTER_BY_ORIGIN = "FILTER_BY_ORIGIN"
 
 export function getAllVideogames(){
     return async function (dispatch) {
@@ -22,9 +24,14 @@ export const getVideogameDetail =(id) => {
             payload: json.data.res });
     };
   };
-  export const createVideogame = function (name,description,image,releaseDate,rating,platform) {
-    return { type: CREATE_VIDEOGAME, payload: name,description,image }
-  };
+  export function createVideogame(payload){
+    return function(dispatch){
+        return axios.post(`http://localhost:3001/videogame/`,payload)
+            .then((response)=>{
+                return response;
+            })
+}
+}
   
 export const getVideogameByName =(name) => {
   return async (dispatch) => { 
@@ -48,4 +55,15 @@ export const getGenders = () =>{
       }) 
     }
   }
-  
+  export function filterByGender (payload){
+    return {
+      type:FILTER_BY_GENDER,
+      payload
+    }
+  }
+  export function filterByOrigin(payload){
+    return{
+      type:FILTER_BY_ORIGIN,
+      payload
+    }
+  }

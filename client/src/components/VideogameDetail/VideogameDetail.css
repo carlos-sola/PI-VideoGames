@@ -17,7 +17,7 @@
 .nombre-detail{
     display: flex;
     justify-content: center;
-    padding: 12px;
+    padding-bottom: 24px;
     border-radius: 24px;
     margin: 2px;
 }
@@ -37,6 +37,8 @@
 }
 
 .boton-atras{
+    margin-top: 16px;
+    margin-left: 16px;
     justify-content: left;
     background-color:#030e1a;
     color:rgb(2, 145, 211);

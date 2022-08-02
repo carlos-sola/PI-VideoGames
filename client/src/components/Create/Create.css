@@ -13,11 +13,51 @@
 
 }
 .formulario{
-    margin-top: 32px;
+    margin-top: 12px;
     padding: 32px;
     min-height: 75vh;
     width: 500px;
     background-color: rgba(0, 0, 0, 0.699);
     border-radius: 10px;
     color: white;
+}
+.titulo-create{
+    background-color: rgba(0, 0, 0, 0.699);
+    padding: 20px;
+    border-radius: 12px;
+}
+.btn-crear{
+    margin-top: 36px;
+    background-color: rgb(2, 145, 211);
+    border-color:rgb(2, 145, 211) ;
+    color:rgb(236, 233, 233);
+    border-radius: 8px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+}
+.btn-crear:hover{
+    background-color: rgb(28, 134, 33);
+    border-color:rgb(28, 134, 33) ;
+    color:rgb(236, 233, 233);
+    transition: 0.5s;
+
+}
+.buton-atras{
+    justify-content: left;
+    background-color:#030e1a;
+    color:rgb(2, 145, 211);
+    border-color: rgb(2, 145, 211);
+    margin-left: 8px;
+    border-radius: 8px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.buton-atras:hover{
+    border-color:rgb(151, 17, 17) ;
+    background-color: rgb(151, 17, 17) ;
+    color: whitesmoke;
+    transition: 0.5s;
 }
