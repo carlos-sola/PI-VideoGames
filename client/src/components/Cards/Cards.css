@@ -3,8 +3,7 @@
     min-height: calc(100vh - 80px) ;
     background-image: url("https://miro.medium.com/max/1050/1*VVdvi5v250Q8LfN-tmE_uw.jpeg");
     background-size: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-
+    overflow-y: scroll;
 }
 
 .cards-container{
