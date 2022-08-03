@@ -5,9 +5,26 @@ import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
 export default function CreateNewVideogame() {
-    
+    function validate(newVideog) {
+        let errors = {}
+        if (!newVideog.name) {
+            errors.name = "Se requiere un nombre"
+        } else if (!newVideog.description) {
+            errors.description = "Completar descripcion del videojuego"
+        } else if (!newVideog.rating) {
+            errors.rating = "Completar rating"
+        }  else if (!newVideog.image) {
+            errors.image = "Completar con una url de la imagen del videojuego"
+        } else if (!newVideog.platform.length) {
+            errors.plataform = "Completar plataformas"
+        } else if (!newVideog.gender.length) {
+            errors.gender = "Completar géneros"
+        }
+        return errors
+    }
 
     const dispatch = useDispatch()
+    const [errors, setErrors] = useState({})
     const history = useHistory()
     const [newGame, setNewGame] = useState({
         name: "",
@@ -23,14 +40,19 @@ export default function CreateNewVideogame() {
             ...newGame,
             [e.target.name]: e.target.value
         })
-        console.log(e.target.value)
+        setErrors(validate({
+            ...newGame,
+            [e.target.name]: e.target.value
+        }))
     }
     function handleSelect(e) {
-        setNewGame({
-            ...newGame,
-            [e.target.name]: [...newGame[e.target.name], e.target.value]
-        })
-        console.log(e.target.name)
+        if (!newGame[e.target.name].includes(e.target.value)){
+            setNewGame({
+                ...newGame,
+                [e.target.name]: [...newGame[e.target.name], e.target.value]
+            })
+        }    
+        
     }
     function handleDelete(e,el) {
         e.preventDefault()
@@ -44,6 +66,7 @@ export default function CreateNewVideogame() {
   
     function handleSumbit(e) {
         e.preventDefault();
+        if(!Object.keys(errors).length){
         dispatch(createVideogame(newGame))
         alert("Videogame creado con éxito!!")
         setNewGame({
@@ -56,6 +79,10 @@ export default function CreateNewVideogame() {
             rating: "",
         })
         history.push('/home')
+        } else {
+            alert("NO SE CREÓ EL VIDEGAME ¡Por favor completa todos los campos!")
+        }
+        
     }
 
     const [genders, setGenders] = useState([])
