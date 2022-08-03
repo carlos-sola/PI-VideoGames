@@ -76,3 +76,14 @@ button.boton-atras:hover{
     margin-bottom: 2px;
     border-radius: 8px;
 }
+.cargando{
+    color: whitesmoke;
+    margin: 0 auto;
+    margin-top: 21%;
+    width: 170px;
+    background-color: rgba(0, 0, 0, 0.753);
+    border-radius: 12px;
+    text-align: center;
+    height: 40px;
+    
+}

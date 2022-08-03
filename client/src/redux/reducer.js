@@ -1,13 +1,14 @@
 
 import validator from 'validator';
 import {CREATE_VIDEOGAME,GET_VIDEOGAME_DETAIL,GET_ALL_VIDEOGAMES,GET_VIDEOGAME_BY_NAME,SET_MENU,FILTER_BY_GENDER,
-    FILTER_BY_ORIGIN,SORT_A_Z,RESET_FILTER} from './actions'
+    FILTER_BY_ORIGIN,SORT_A_Z,RESET_FILTER,SET_LOADING} from './actions'
 
 const initialState = {
     allvideogames:[],
     showVideogames:[],
     videoGameDetail:{},
     menu:false,
+    loading:false,
 
 };
 const rootReducer=(state=initialState,action)=>{
@@ -16,12 +17,14 @@ const rootReducer=(state=initialState,action)=>{
             return{
                 ...state,
                 allvideogames: action.payload,
-                showVideogames: action.payload
+                showVideogames: action.payload,
+                loading:false
             }
         case GET_VIDEOGAME_DETAIL:
             return {
                 ...state,
                 videoGameDetail: action.payload,
+                loading:false
             }
         case CREATE_VIDEOGAME:
             return {
@@ -31,7 +34,8 @@ const rootReducer=(state=initialState,action)=>{
       case GET_VIDEOGAME_BY_NAME :
           return{
               ...state,
-              showVideogames: action.payload
+              showVideogames: action.payload,
+              loading:false
           }
         case SET_MENU:
             return{
@@ -121,6 +125,11 @@ const rootReducer=(state=initialState,action)=>{
                                 ...state,
                                 showVideogames: [...resetF]
                             }
+                            case SET_LOADING:
+                                return{
+                                    ...state,
+                                    loading: action.payload
+                                }
     }
   
     return state

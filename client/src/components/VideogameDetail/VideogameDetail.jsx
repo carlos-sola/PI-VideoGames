@@ -2,19 +2,24 @@ import { Link,useParams } from 'react-router-dom'
 import './VideogameDetail.css';
 import React, { Component, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getVideogameDetail } from '../../redux/actions';
+import { getVideogameDetail, setLoading } from '../../redux/actions';
 import logo from '../../assets/images/logo1-videogames.png'
 
 
 
 
 export default function VideogameDetail () {
+    let loading = useSelector(state=>state.loading)
     let detail= useSelector(state => state.videoGameDetail);
     let dispatch = useDispatch();
     let { id } = useParams()
     useEffect(() => {
         dispatch(getVideogameDetail(id))
+        dispatch(setLoading(true))
     },[])
+    if(loading){
+        return <div className='detail'><h2 className="cargando">Cargando...</h2></div>
+    }
     return <div className='detail'>
              <div className='carddetail'>
              <Link to="/home"><button className='boton-atras'><h4>atrás</h4></button></Link>

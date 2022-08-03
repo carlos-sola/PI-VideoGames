@@ -7,6 +7,7 @@ import Paginado from '../Paginado/Paginado'
 
 
 export default function Cards () {
+    const loading = useSelector (state=> state.loading)
    const showVideogames = useSelector(state => state.showVideogames);
    // PAGINADO
    const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +19,14 @@ export default function Cards () {
    const paginado=(pageNumber)=>{
            setCurrentPage(pageNumber)
    }
-//^^^PAGINADO^^^
+    if(loading){
+        return <div className='cards-wrapper'><h2 className="cargando">Cargando...</h2>
+        </div>
+    }
+    if(!showVideogames?.length){
+        return <div className='cards-wrapper' ><h2 className="cargando1">No se encontró ningún juego!!</h2>
+        </div>
+    }
    
     return <div className='cards-wrapper'>
             <div className='cards-container'>

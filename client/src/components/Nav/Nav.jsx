@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/logo1-videogames.png';
-import { getVideogameByName, setMenu } from '../../redux/actions';
+import { getVideogameByName, setLoading, setMenu } from '../../redux/actions';
 import "./Nav.css";
 
 export default function NavBar() {
@@ -14,7 +14,9 @@ export default function NavBar() {
     }
     const handleOnSearch = () =>{
         dispatch(getVideogameByName(busqueda));
-        setBusqueda(' ')
+        setBusqueda('')
+        dispatch(setLoading(true))
+
     }
     const handleOnClick = () =>{
         dispatch (setMenu(!menu))
@@ -23,7 +25,7 @@ export default function NavBar() {
     return <nav className='navbar'>
              <img className='logo' src={Logo} alt=''/>
              <div className='search'>
-                 <input className='input' onChange={e=>handleOnChange(e)} type="text" placeholder='buscar juego por nombre...' />
+                 <input className='input' value={busqueda} onChange={e=>handleOnChange(e)} type="text" placeholder=' Buscar juego...' />
                  <button onClick={()=>handleOnSearch()} className='boton'>BUSCAR</button>
              </div>
              

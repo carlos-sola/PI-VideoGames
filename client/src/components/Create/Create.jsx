@@ -5,6 +5,8 @@ import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
 export default function CreateNewVideogame() {
+    
+
     const dispatch = useDispatch()
     const history = useHistory()
     const [newGame, setNewGame] = useState({

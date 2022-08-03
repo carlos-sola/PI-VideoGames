@@ -24,3 +24,13 @@
 .to-detail{
     text-decoration: none;
 }
+.cargando1{
+    color: whitesmoke;
+    margin: 0 auto;
+    margin-top: 21%;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.753);
+    border-radius: 12px;
+    text-align: center;
+    height: 40px;
+}

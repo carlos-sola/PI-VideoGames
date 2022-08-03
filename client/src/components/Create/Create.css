@@ -20,7 +20,7 @@
     background-color: rgba(0, 0, 0, 0.699);
     border-radius: 10px;
     color: white;
-    max-height: 100vh;
+    max-height: 85vh;
     min-height: 75vh ;
     overflow-y: scroll;
 }

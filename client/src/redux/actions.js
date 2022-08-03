@@ -7,7 +7,8 @@ export const SET_MENU = "SET_MENU";
 export const FILTER_BY_GENDER = "FILTER_BY_GENDER";
 export const FILTER_BY_ORIGIN = "FILTER_BY_ORIGIN";
 export const SORT_A_Z = "SORT_A_Z";
-export const RESET_FILTER = "RESET_FILTER"
+export const RESET_FILTER = "RESET_FILTER";
+export const SET_LOADING = "SET_LOADING"
 
 export function getAllVideogames(){
     return async function (dispatch) {
@@ -78,6 +79,12 @@ export const getGenders = () =>{
   export function resetFilter(payload){
     return{
       type:RESET_FILTER,
+      payload
+    }
+  }
+  export function setLoading(payload){
+    return{
+      type: SET_LOADING,
       payload
     }
   }
