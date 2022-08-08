@@ -15,7 +15,8 @@
 }
 .formulario{
     margin-top: 12px;
-    padding: 32px;
+    padding-left: 32px;
+    padding-top: 12px;
     width: 500px;
     background-color: rgba(0, 0, 0, 0.699);
     border-radius: 10px;
@@ -24,13 +25,22 @@
     min-height: 75vh ;
     overflow-y: scroll;
 }
+
+.formulario::-webkit-scrollbar {
+    display: none;
+}
+
 .titulo-create{
-    background-color: rgba(0, 0, 0, 0.699);
-    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #030e1a ;
+    padding: 14px;
     border-radius: 12px;
+    color: rgb(2, 145, 211);
+    padding-right: 12px;
 }
 .btn-crear{
-    margin-top: 36px;
+    margin-top: 16px;
     background-color: rgb(2, 145, 211);
     border-color:rgb(2, 145, 211) ;
     color:rgb(236, 233, 233);
@@ -91,4 +101,54 @@
     color: whitesmoke;
     font-size: x-small;
     border-radius: 5px;
+}
+.name-form{
+    font-size: 18px;
+    color:rgb(2, 145, 211);
+    font-weight: bold;
+    width: 100%;
+    display: inline-block;
+}
+.input-form{
+    width: 200px;
+    height: 22px ;
+    margin-bottom: 5px;
+    background-color:#030e1a;
+    border-color: rgb(2, 145, 211) ;
+    border-radius: 8px;
+    color: rgb(2, 145, 211);
+    padding-left: 4px;
+}
+.input-description{
+    width: 440px;
+    min-height: 40px ;
+    margin-top: 8px;
+    background-color:#030e1a;
+    border-color: rgb(2, 145, 211) ;
+    border-radius: 8px;
+    color: rgb(2, 145, 211);
+    padding-left: 4px;
+}
+.name-form2{
+    font-size: 18px;
+    color:rgb(2, 145, 211);
+    font-weight: bold;
+    width: 100%;
+    display: inline-block;
+}
+.input-form2{
+    width: 200px;
+    height: 22px ;
+    margin-bottom: 5px;
+    background-color:#030e1a;
+    border-color: rgb(2, 145, 211) ;
+    border-radius: 8px;
+    color: rgb(2, 145, 211);
+    padding-left: 4px;
+    margin-right: 200px;
+}
+.loguito{
+    height: 35px;
+    width: auto;
+    padding-left: 12px;
 }

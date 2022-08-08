@@ -35,7 +35,7 @@ export default function Menu () {
     }, [])
     return <div className={`menu-container ${menu ? "open" : ""}`}>
         <label>Ordenamiento</label>
-        <select onChange={handleSort}>
+        <select className="input-form" onChange={handleSort}>
             <option value="Z-A">Z-A</option>
             <option value="A-Z">A-Z</option>
             <option value="AscRating">Rating Asc</option>
@@ -43,7 +43,7 @@ export default function Menu () {
         </select>
         <br/>
         <label>filtrar por Géneros</label>
-        <select onChange={handleSelect}>
+        <select className="input-form" onChange={handleSelect}>
         <option key="All" value="All">All</option>
         {genders?.map(e => {
                     return <option key={e.name} value={e.name}>{e.name}</option>
@@ -52,7 +52,7 @@ export default function Menu () {
         </select>
         <br/>
         <label>Filtrar por Origen</label>
-        <select onChange={handleFilter}>
+        <select className="input-form" onChange={handleFilter}>
             <option value="All">All</option>
             <option value="Created">Creados</option>
             <option value="Existentes">Existentes</option>

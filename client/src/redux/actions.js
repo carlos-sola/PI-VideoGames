@@ -87,4 +87,6 @@ export const getGenders = () =>{
       type: SET_LOADING,
       payload
     }
-  }
+    
+  };
+  

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { createVideogame, getGenders, getPlatforms } from '../../redux/actions';
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
+import logo from '../../assets/images/logo1-videogames.png'
 
 export default function CreateNewVideogame() {
     function validate(newVideog) {
@@ -80,7 +81,7 @@ export default function CreateNewVideogame() {
         })
         history.push('/home')
         } else {
-            alert("NO SE CREÓ EL VIDEGAME ¡Por favor completa todos los campos!")
+            alert("NO SE CREÓ EL VIDEOGAME ¡Por favor completa todos los campos!")
         }
         
     }
@@ -97,28 +98,33 @@ export default function CreateNewVideogame() {
         getGendersAndPlatforms();
     }, [])
 
-    return <div className='create-videogame'><h4 className="titulo-create">Crear nuevo Videogame</h4>
+    return <div className='create-videogame'>
+        <div className="titulo-create">
+            <h4 >Crear nuevo Videogame</h4>
+            <img className="loguito" src={logo}/>
+            </div>
+        
         <form className='formulario' onSubmit={(e) => handleSumbit(e)}>
-            <label> Nombre: </label>
-            <input type="text" name="name" value={newGame.name} onChange={handleChange} required/>
-            <br />
-            <label> Descripción: </label>
-            <textarea name="description" value={newGame.description} onChange={handleChange} required/>
-            <br />
-            <label> Imagen: </label>
-            <input type='url' name='image' value={newGame.image} onChange={handleChange} />
-            <br />
-            <label>Lanzamiento: </label>
-            <input type="date" name='releasDate' value={newGame.releasDate} onChange={handleChange} />
-            <br />
+            <label className="name-form"> Nombre: </label>
+           
+            <input className="input-form" type="text" name="name" value={newGame.name} onChange={handleChange} required/>
+            <label className="name-form"> Descripción: </label>
+            <textarea className="input-description" name="description" value={newGame.description} onChange={handleChange} required/>
+            <label className="name-form"> Imagen: </label>
+           
+            <input className="input-form" type='url' name='image' value={newGame.image} onChange={handleChange} />
+            <label className="name-form">Lanzamiento: </label>
+        
+            <input className="input-form" type="date" name='releasDate' value={newGame.releasDate} onChange={handleChange} />
+           
 
-            <label>Plataformas: </label>
-            <select id="platform" name="platform" onChange={(e) => handleSelect(e)}>
+            <label className="name-form">Plataformas: </label>
+            <select className="input-form" id="platform" name="platform" onChange={(e) => handleSelect(e)}>
                 {platforms.map(e => {
                     return <option key={e.name} value={e.name}>{e.name}</option>
 
                 })}
-            </select>
+            </select >
             <div className="container-platform-label">
             {newGame.platform.map(el => {
                 return <div className="platform-Label">
@@ -127,9 +133,8 @@ export default function CreateNewVideogame() {
                 </div>
             })}
             </div>
-            <br />
-            <label>Géneros: </label>
-            <select id="gender" name="gender" onChange={(e) => handleSelect(e)}>
+            <label className="name-form">Géneros: </label>
+            <select className="input-form" id="gender" name="gender" onChange={(e) => handleSelect(e)}>
                 {genders.map(e => {
                     return <option key={e.name} value={e.name}>{e.name}</option>
 
@@ -143,11 +148,8 @@ export default function CreateNewVideogame() {
                 </div>
             })}
             </div>
-
-            <br />
-            <label> Rating: </label>
-            <input type="number" name='rating' value={newGame.rating} min={0} max={10} onChange={handleChange} />
-            <br />
+            <label className="name-form2"> Rating: </label>
+            <input className="input-form2" type="number" name='rating' value={newGame.rating} min={0} max={10} onChange={handleChange} />
             <button type="submit" className='btn-crear'>Crear Videogame</button>
             <Link to="/home"><button className='buton-atras'><h4>Atrás</h4></button></Link>
             <div className='detalle-container'></div>

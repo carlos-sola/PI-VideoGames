@@ -8,18 +8,19 @@
 }
 
 .imagen-detail{
-    max-height: 350px;
+    height: 450px;
     width: auto;
     display: flex;
     justify-content:center;
-    padding-bottom: 20px;
+    padding-bottom: 12px;
 }
 .nombre-detail{
     display: flex;
     justify-content: center;
-    padding-bottom: 24px;
+    padding-bottom: 8px;
     border-radius: 24px;
     margin: 2px;
+    font-size: 20px;
 }
 .carddetail{
     height: 100%;
@@ -27,8 +28,8 @@
     color: gainsboro;
 }
 .detalle-container{
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 140px;
+    padding-right: 140px;
     padding-bottom: 40px;
     display: flex;
     flex-direction: column;
@@ -38,7 +39,7 @@
 
 .boton-atras{
     margin-top: 16px;
-    margin-left: 16px;
+    margin-left: 24px;
     justify-content: left;
     background-color:#030e1a;
     color:rgb(2, 145, 211);
@@ -61,13 +62,14 @@ button.boton-atras:hover{
 }
 .description{
     padding-bottom: 8px;
+    font-size: 14px;
 }
 .link{
     color: rgb(33, 190, 33);
 }
 .generos-detail{
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
     background-color: rgba(9, 170, 245, 0.479) ;
     border-color: rgb(20, 20, 20);
     color:rgb(182, 179, 179);
@@ -75,6 +77,7 @@ button.boton-atras:hover{
     margin-top: 2px;
     margin-bottom: 2px;
     border-radius: 8px;
+    font-size: 14px;
 }
 .cargando{
     color: whitesmoke;
@@ -86,4 +89,15 @@ button.boton-atras:hover{
     text-align: center;
     height: 40px;
     
+}
+.logo12{
+    width: 40px;
+    height: 40px;
+    margin-top: 16px;
+    margin-right: 20px;
+    justify-content: right;
+}
+.sup{
+    display: flex;
+    justify-content: space-between;
 }

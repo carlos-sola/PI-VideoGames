@@ -4,12 +4,12 @@
     justify-content:space-around;
     align-items: center;
     width: 250px;
-    height: 450px;
+    height: 440px;
     position: fixed;
     top: 80px;
     left: 100%;
     color: rgb(2, 145, 211) ;
-    background-color:#0b2949c2  ;
+    background-color:#0b2949ea  ;
     transition: all 0.5s ease-in-out;
     text-decoration: none;
     border-bottom-left-radius: 16px;
@@ -20,7 +20,7 @@
 
 }
 .menu-container.open{
-    transform: translateX(-107%);
+    transform: translateX(-95%);
 }
 .to-create{
     text-decoration: none;
@@ -30,7 +30,7 @@
 }
 
 .menu-container:hover{
-    background-color:#0a3058f1 ;
+    background-color:#0a3058 ;
 }
 .btn-create{
     border-radius: 8px;

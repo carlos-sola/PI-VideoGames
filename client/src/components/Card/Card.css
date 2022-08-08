@@ -4,19 +4,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(3, 130, 189, 0.83);
+    background-color:#133253dc;
+    color:rgb(7, 172, 248);
+
     padding: 12px;
-    padding-top: 16px;
+    padding-top: 12px;
     border-radius: 12px;
     margin: 16px;
     height: 375px;
-    color: rgb(245, 245, 245);
     cursor: pointer;
     
 }
 .container:hover{
-    background-color:#133253cc;
-    color:rgb(2, 145, 211);
+    background-color: rgba(3, 130, 189, 0.83);
+    color: rgb(245, 245, 245);
+    
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
@@ -25,13 +27,13 @@
     display: flex;
     justify-content: center;
     width: 90%;
-    max-height: 140px;
+    height: 140px;
     border-radius: 8px;
     
 }
 .generos{
     display: flex;
-    padding: 4px 8px;
+    padding: 2px 4px;
     background-color: rgba(255, 255, 255, 0.397) ;
     border-color: rgb(20, 20, 20);
     color:black;
@@ -39,13 +41,18 @@
     margin-top: 4px;
     margin-bottom: 4px;
     border-radius: 8px;
+    font-size: 12px;
+    font: bolder;
 }
 .name-videogame{
     font-weight: bolder;
-    font-size: 22px;
+    font-size: 18px;
     font-style:inherit;
     margin-top: 12px;
     margin-bottom: 8px;
     color: rgb(235, 229, 229);
     text-align: center;
+}
+.rating{
+    font-size: 14px;
 }

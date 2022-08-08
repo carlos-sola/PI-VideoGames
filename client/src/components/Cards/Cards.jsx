@@ -11,7 +11,7 @@ export default function Cards () {
    const showVideogames = useSelector(state => state.showVideogames);
    // PAGINADO
    const [currentPage, setCurrentPage] = useState(1);
-   const [videogamePerPage, setGamePerPage] = useState(4);
+   const [videogamePerPage, setGamePerPage] = useState(8);
    const indexOfLastGame = currentPage * videogamePerPage;
    const indexOfFirstGame = indexOfLastGame - videogamePerPage;
    const currentVideogame = showVideogames.slice(indexOfFirstGame,indexOfLastGame);

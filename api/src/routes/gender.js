@@ -5,4 +5,4 @@ const router = Router();
 
 router.get('/',genderController.getAll)
 
-module.exports = router;
+module.exports = router;            

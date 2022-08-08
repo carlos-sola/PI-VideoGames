@@ -6,4 +6,5 @@ router.get('/:idVideogame',videogameController.getById);
 router.get('/',videogameController.getAll);
 router.post('/',videogameController.createVideogame);
 
+
 module.exports = router;
